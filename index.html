@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1e1e1e">
+<title>АвтоПрофи — ремонт иномарок за 1 день</title>
+<meta name="description" content="Автосервис АвтоПрофи: диагностика, замена масла, шиномонтаж, ремонт двигателя. Гарантия на все работы. Запись онлайн.">
+<link rel="preconnect" href="https://unpkg.com">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+<header class="header" id="header">
+  <div class="container header__inner">
+    <a href="#hero" class="logo" aria-label="АвтоПрофи">
+      <span class="logo__mark">A</span>
+      <span class="logo__text">Авто<strong>Профи</strong></span>
+    </a>
+
+    <nav class="nav" id="nav">
+      <a class="nav__link" href="#why">Почему мы</a>
+      <a class="nav__link" href="#services">Услуги</a>
+      <a class="nav__link" href="#how">Как работаем</a>
+      <a class="nav__link" href="#reviews">Отзывы</a>
+      <a class="nav__link" href="#contacts">Контакты</a>
+      <a class="btn btn--primary nav__cta" href="#contacts">Записаться</a>
+    </nav>
+
+    <a href="#contacts" class="btn btn--primary header__cta">Записаться</a>
+
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="badge">Гарантия на все работы — 1 год</span>
+        <h1 class="hero__title">Ремонт иномарок <span class="accent">за 1 день</span></h1>
+        <p class="hero__text">
+          Профессиональная диагностика, оригинальные запчасти и честные цены.
+          Берём в работу любые марки — от Toyota до Porsche.
+        </p>
+        <div class="hero__actions">
+          <a href="#contacts" class="btn btn--primary btn--lg">Записаться</a>
+          <a href="#services" class="btn btn--ghost btn--lg">Услуги</a>
+        </div>
+        <ul class="hero__stats">
+          <li><strong>12</strong><span>лет опыта</span></li>
+          <li><strong>8500+</strong><span>клиентов</span></li>
+          <li><strong>1 год</strong><span>гарантии</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__media">
+        <svg class="hero__car" viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Автомобиль">
+          <defs>
+            <linearGradient id="bodyGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#ff8a3d"/>
+              <stop offset="1" stop-color="#ff6b1a"/>
+            </linearGradient>
+            <radialGradient id="carShadow" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="#000" stop-opacity="0.55"/>
+              <stop offset="1" stop-color="#000" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Тень -->
+          <ellipse cx="320" cy="334" rx="300" ry="14" fill="url(#carShadow)"/>
+
+          <!-- ЗАДНЕЕ колесо -->
+          <circle cx="150" cy="272" r="54" fill="#0a0a0a"/>
+          <circle cx="150" cy="272" r="28" fill="#3a3a3a"/>
+          <circle cx="150" cy="272" r="10" fill="#141414"/>
+
+          <!-- ПЕРЕДНЕЕ колесо -->
+          <circle cx="490" cy="272" r="54" fill="#0a0a0a"/>
+          <circle cx="490" cy="272" r="28" fill="#3a3a3a"/>
+          <circle cx="490" cy="272" r="10" fill="#141414"/>
+
+          <!-- КУЗОВ (арки совпадают с колёсами: центры 150 и 490, r = 54) -->
+          <path d="M 55 272
+                   L 45 272
+                   Q 25 272 25 252
+                   L 25 198
+                   Q 25 168 62 162
+                   L 148 98
+                   Q 162 85 182 85
+                   L 312 85
+                   Q 332 85 348 102
+                   L 415 158
+                   L 570 158
+                   Q 618 160 620 200
+                   L 620 252
+                   Q 620 272 600 272
+                   L 544 272
+                   A 54 54 0 0 0 436 272
+                   L 204 272
+                   A 54 54 0 0 0 96 272
+                   L 55 272 Z"
+                fill="url(#bodyGrad)"/>
+
+          <!-- Заднее боковое окно -->
+          <path d="M 80 158 L 148 100 L 245 100 L 245 158 Z" fill="#0f0f0f" opacity="0.92"/>
+          <!-- Переднее боковое окно -->
+          <path d="M 262 100 L 305 100 L 398 158 L 262 158 Z" fill="#0f0f0f" opacity="0.92"/>
+
+          <!-- Стойка двери -->
+          <line x1="253" y1="100" x2="253" y2="268" stroke="#b8440a" stroke-width="2" opacity="0.6"/>
+
+          <!-- Фара -->
+          <rect x="600" y="176" width="18" height="22" rx="5" fill="#ffffff" opacity="0.92"/>
+          <!-- Задний фонарь -->
+          <rect x="26" y="180" width="14" height="26" rx="4" fill="#ff3b3b" opacity="0.9"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY -->
+  <section class="section section--alt" id="why">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__sub">Преимущества</span>
+        <h2 class="section__title">Почему выбирают нас</h2>
+        <p class="section__text">Работаем с 2013 года. В штате — мастера с опытом от 8 лет и профессиональное оборудование.</p>
+      </div>
+
+      <div class="grid grid--4">
+        <article class="card card--feature">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 .9-4.5 4.4 1 6.2-5.5-3-5.5 3 1-6.2L3 8.9 9 8z"/></svg>
+          </div>
+          <h3>Опыт 12 лет</h3>
+          <p>Более 8500 отремонтированных иномарок. Знаем болячки каждой марки.</p>
+        </article>
+
+        <article class="card card--feature">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Гарантия 1 год</h3>
+          <p>Официальная гарантия на все виды работ и установленные запчасти.</p>
+        </article>
+
+        <article class="card card--feature">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8l-9-5-9 5v8l9 5 9-5z"/><path d="M3.3 7L12 12l8.7-5M12 22V12"/></svg>
+          </div>
+          <h3>Оригинал запчастей</h3>
+          <p>Только проверенные поставщики. Работаем с OEM и качественными аналогами.</p>
+        </article>
+
+        <article class="card card--feature">
+          <div class="card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>Компьютерная диагностика</h3>
+          <p>Считываем ошибки со всех блоков. Точный поиск неисправности за 30 минут.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__sub">Прайс-лист</span>
+        <h2 class="section__title">Услуги и цены</h2>
+        <p class="section__text">Итоговая стоимость зависит от марки и объёма работ. Точную смету скажем после диагностики.</p>
+      </div>
+
+      <div class="grid grid--4">
+        <article class="card card--service">
+          <div class="card__top">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v6M12 22v-6M4.9 4.9l4.2 4.2M14.9 14.9l4.2 4.2M2 12h6M16 12h6M4.9 19.1l4.2-4.2M14.9 9.1l4.2-4.2"/></svg>
+            </div>
+          </div>
+          <h3>Замена масла</h3>
+          <p>Масло, фильтр, проверка всех технических жидкостей.</p>
+          <div class="card__price">от 1 500 ₽<small>за 30 минут</small></div>
+        </article>
+
+        <article class="card card--service">
+          <div class="card__top">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+            </div>
+          </div>
+          <h3>Шиномонтаж</h3>
+          <p>Балансировка колёс, сезонная смена, ремонт проколов.</p>
+          <div class="card__price">от 2 000 ₽<small>за комплект</small></div>
+        </article>
+
+        <article class="card card--service">
+          <div class="card__top">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+            </div>
+          </div>
+          <h3>Диагностика</h3>
+          <p>Компьютерная и инструментальная проверка всех систем авто.</p>
+          <div class="card__price">от 1 000 ₽<small>при ремонте — бесплатно</small></div>
+        </article>
+
+        <article class="card card--service">
+          <div class="card__top">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 2v6l-4 8a2 2 0 001.8 3h10.4A2 2 0 0019 16L15 8V2"/><path d="M9 2h6"/></svg>
+            </div>
+          </div>
+          <h3>Ремонт двигателя</h3>
+          <p>Замена ГРМ, прокладок, капитальный ремонт, чистка форсунок.</p>
+          <div class="card__price">от 8 000 ₽<small>за работы</small></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW -->
+  <section class="section section--alt" id="how">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__sub">Процесс</span>
+        <h2 class="section__title">Как мы работаем</h2>
+        <p class="section__text">Прозрачный процесс от записи до выдачи готового автомобиля.</p>
+      </div>
+
+      <div class="steps">
+        <article class="step">
+          <div class="step__num">01</div>
+          <h3>Заявка</h3>
+          <p>Оставляете заявку на сайте или звоните. Согласуем удобное время.</p>
+        </article>
+        <article class="step">
+          <div class="step__num">02</div>
+          <h3>Диагностика</h3>
+          <p>Осматриваем авто, находим причину неисправности и считаем смету.</p>
+        </article>
+        <article class="step">
+          <div class="step__num">03</div>
+          <h3>Ремонт</h3>
+          <p>Согласуем стоимость и сроки. Приступаем к работе сразу после одобрения.</p>
+        </article>
+        <article class="step">
+          <div class="step__num">04</div>
+          <h3>Выдача</h3>
+          <p>Проверяем результат и отдаём машину с гарантией и документами.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section" id="reviews">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__sub">Отзывы</span>
+        <h2 class="section__title">Что говорят клиенты</h2>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="review">
+          <div class="review__head">
+            <div class="review__avatar">А</div>
+            <div>
+              <div class="review__name">Александр</div>
+              <div class="review__car">BMW 520d</div>
+            </div>
+          </div>
+          <p class="review__text">Заменили турбину за один день. Всё честно объяснили, показали старые детали. Цена не изменилась от первоначальной сметы.</p>
+          <div class="review__stars">★★★★★</div>
+        </article>
+
+        <article class="review">
+          <div class="review__head">
+            <div class="review__avatar">М</div>
+            <div>
+              <div class="review__name">Марина</div>
+              <div class="review__car">Kia Sportage</div>
+            </div>
+          </div>
+          <p class="review__text">Приятно удивило отношение — не навязывают лишнего. Сделали диагностику, заменили масло и колодки. Всё быстро, без «сюрпризов».</p>
+          <div class="review__stars">★★★★★</div>
+        </article>
+
+        <article class="review">
+          <div class="review__head">
+            <div class="review__avatar">Д</div>
+            <div>
+              <div class="review__name">Дмитрий</div>
+              <div class="review__car">Volkswagen Tiguan</div>
+            </div>
+          </div>
+          <p class="review__text">Постоянно тут обслуживаюсь уже третий год. Ребята знают своё дело, работают аккуратно и в срок. Рекомендую.</p>
+          <div class="review__stars">★★★★★</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="section section--alt" id="contacts">
+    <div class="container">
+      <div class="section__head">
+        <span class="section__sub">Контакты</span>
+        <h2 class="section__title">Запишитесь на ремонт</h2>
+        <p class="section__text">Оставьте заявку — перезвоним в течение 15 минут и уточним удобное время.</p>
+      </div>
+
+      <div class="contacts">
+        <div class="contacts__info">
+          <ul class="contacts__list">
+            <li class="contacts__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 1118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <div>
+                <b>Адрес</b>
+                <span>Москва, ул. Автомобильная, 15, стр. 2</span>
+              </div>
+            </li>
+            <li class="contacts__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 01-2.2 2A19.8 19.8 0 012 4.2 2 2 0 014 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.6a2 2 0 01-.5 2.1L8 9.5a16 16 0 006.5 6.5l1.1-1.1a2 2 0 012.1-.5c.8.3 1.7.6 2.6.7A2 2 0 0122 16.9z"/></svg>
+              <div>
+                <b>Телефон</b>
+                <a href="tel:+74951234567">+7 (495) 123-45-67</a>
+              </div>
+            </li>
+            <li class="contacts__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <div>
+                <b>Режим работы</b>
+                <span>Пн–Сб: 9:00 – 21:00<br>Вс: 10:00 – 18:00</span>
+              </div>
+            </li>
+            <li class="contacts__item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+              <div>
+                <b>Email</b>
+                <a href="mailto:info@autoprofi.ru">info@autoprofi.ru</a>
+              </div>
+            </li>
+          </ul>
+
+          <div class="map-wrap">
+            <div id="map"></div>
+          </div>
+        </div>
+
+        <form class="form" id="bookingForm" novalidate>
+          <input type="hidden" name="access_key" value="7f099b30-7877-48f7-abbb-95e2a2254b37">
+          <input type="hidden" name="subject" value="Новая заявка с сайта АвтоПрофи">
+          <input type="hidden" name="from_name" value="АвтоПрофи">
+          <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+          <div class="form__row">
+            <label class="field">
+              <span class="field__label">Ваше имя</span>
+              <input type="text" id="name" name="name" placeholder="Иван" autocomplete="name" required>
+              <span class="field__error" data-error="name"></span>
+            </label>
+
+            <label class="field">
+              <span class="field__label">Телефон</span>
+              <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" inputmode="tel" autocomplete="tel" required>
+              <span class="field__error" data-error="phone"></span>
+            </label>
+          </div>
+
+          <label class="field">
+            <span class="field__label">Марка и модель авто</span>
+            <input type="text" id="car" name="car" placeholder="Toyota Camry 2018">
+          </label>
+
+          <label class="field">
+            <span class="field__label">Описание проблемы</span>
+            <textarea id="message" name="message" rows="4" placeholder="Опишите, что беспокоит..."></textarea>
+          </label>
+
+          <button type="submit" class="btn btn--primary btn--lg btn--block">Отправить заявку</button>
+          <p class="form__note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных.</p>
+          <div class="form__status" id="formStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__col">
+        <a href="#hero" class="logo">
+          <span class="logo__mark">A</span>
+          <span class="logo__text">Авто<strong>Профи</strong></span>
+        </a>
+        <p style="margin-top:14px">Автосервис полного цикла. Ремонт иномарок с гарантией. Работаем с 2013 года.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Меню</h4>
+        <ul>
+          <li><a href="#why">Почему мы</a></li>
+          <li><a href="#services">Услуги</a></li>
+          <li><a href="#how">Как работаем</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:+74951234567">+7 (495) 123-45-67</a></li>
+          <li><a href="mailto:info@autoprofi.ru">info@autoprofi.ru</a></li>
+          <li><p>Москва, ул. Автомобильная, 15</p></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year">2025</span> АвтоПрофи. Все права защищены.</span>
+      <span>Ремонт иномарок за 1 день</span>
+    </div>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Наверх">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/main.js"></script>
+<script src="js/form.js"></script>
+<script src="js/map.js"></script>
+</body>
+</html>
